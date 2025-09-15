@@ -13,12 +13,6 @@ Kirigami.ApplicationWindow {
 
 	ListModel {
 		id: kountdownModel
-
-		ListElement {
-			name: "Dog Birthday!"
-			description: "Bug doggo birthday blowout."
-			date: 100
-		}
 	}
 
 	globalDrawer: Kirigami.GlobalDrawer {
@@ -31,6 +25,67 @@ Kirigami.ApplicationWindow {
 				onTriggered: Qt.quit()
 			}
 		]
+	}
+
+	Kirigami.Dialog {
+		id: addDialog
+		title: "Add kountdown"
+		standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+		padding: Kirigami.Units.largeSpacing
+		preferredWidth: Kirigami.Units.gridUnit * 20
+
+		Kirigami.FormLayout {
+			Controls.TextField {
+				id: nameField
+				Kirigami.FormData.label: "Name*:"
+				onAccepted: descriptionField.forceActiveFocus()
+			}
+			Controls.TextField {
+				id: descriptionField
+				Kirigami.FormData.label: "Description:"
+				placeholderText: "Optional"
+				onAccepted: dataField.forceActiveFocus()
+			}
+			Controls.TextField {
+				id: dataField
+				Kirigami.FormData.label: "ISO Date*:"
+				inputMask: "D999-99-99"
+				onAccepted: addDialog.onAccepted()
+			}
+			Controls.Label {
+				text: "* = required fields"
+			}
+		}
+
+		Component.onCompleted: {
+			const button = standardButton(Kirigami.Dialog.Ok);
+			button.enabled = Qt.binding( () => requiredFieldFilled() );
+		}
+
+		onAccepted: {
+			if (!addDialog.requiredFieldFilled()) return;
+			appendDataToModel();
+			clearFieldsAndClose();
+		}
+
+		function requiredFieldFilled() {
+			return (nameField.text !== "" && dataField.acceptableInput);
+		}
+
+		function appendDataToModel() {
+			kountdownModel.append({
+				name: nameField.text,
+				description: descriptionField.text,
+				date: new Date(dataField.text)
+			});
+		}
+
+		function clearFieldsAndClose() {
+			nameField.text = ""
+			descriptionField.text = ""
+			dataField.text = ""
+			addDialog.close();
+		}
 	}
 
 	Component {
@@ -54,7 +109,7 @@ Kirigami.ApplicationWindow {
 
 					Kirigami.Heading {
 						level: 1
-						text: date
+						text: "%1 days", Math.round((date-Date.now())/86400000)
 					}
 
 					ColumnLayout {
@@ -91,11 +146,7 @@ Kirigami.ApplicationWindow {
 				id: addAction
 				icon.name: "list-add-symbolic"
 				text: "Add kountdown"
-				onTriggered: kountdownModel.append({
-					name: "Kirigami Action added a card!",
-					description: "Congratulations, your Kirigami Action works!",
-					date: 1000
-				})
+				onTriggered: addDialog.open()
 			}
 		]
 
