@@ -20,7 +20,7 @@ fn main() {
 	let mut engine = QQmlApplicationEngine::new();
 
 	// To associate the executable to the installed desktop file
-	QGuiApplication::set_desktop_file_name(&QString::from("org.kde.kirigami_starter"));
+	QGuiApplication::set_desktop_file_name(&QString::from("org.ac.kirigami_starter"));
 
 	// To ensure the style is set correctly
 	let style = env::var("QT_QUICK_CONTROLS_STYLE");
