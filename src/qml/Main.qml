@@ -9,7 +9,7 @@ Kirigami.ApplicationWindow {
     width: 400
     height: 300
 
-    title: "Hello World"
+    title: "Kountdown"
 
 	ListModel {
 		id: kountdownModel
