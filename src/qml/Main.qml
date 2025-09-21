@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
-import org.ac.starter.components
+import org.ac.starter
 
 Kirigami.ApplicationWindow {
     id: root
