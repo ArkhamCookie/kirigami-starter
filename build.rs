@@ -4,7 +4,11 @@ fn main() {
 	CxxQtBuilder::new()
 		.qml_module(QmlModule {
 			uri: "org.ac.starter",
-			qml_files: &["src/qml/Main.qml"],
+			qml_files: &[
+				"src/qml/Main.qml",
+				"src/qml/components/AddDialog.qml",
+				"src/qml/components/KountdownDelegate.qml"
+			],
 			rust_files: &["src/main.rs"],
 			..Default::default()
 		})
