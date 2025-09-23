@@ -6,8 +6,8 @@ fn main() {
 			uri: "org.ac.starter",
 			qml_files: &[
 				"src/qml/Main.qml",
-				"src/qml/AddDialog.qml",
-				"src/qml/KountdownDelegate.qml"
+				"src/qml/components/AddDialog.qml",
+				"src/qml/components/KountdownDelegate.qml"
 			],
 			rust_files: &["src/main.rs"],
 			..Default::default()
