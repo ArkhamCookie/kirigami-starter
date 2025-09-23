@@ -25,7 +25,7 @@ Kirigami.Dialog {
         addDialog.close();
     }
 
-    title: i18nc("@title:window", "Add kountdown")
+    title: "Add kountdown"
     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
     padding: Kirigami.Units.largeSpacing
     preferredWidth: Kirigami.Units.gridUnit * 20
@@ -47,21 +47,21 @@ Kirigami.Dialog {
         Controls.TextField {
             id: nameField
 
-            Kirigami.FormData.label: i18nc("@label:textbox", "Name*:")
+            Kirigami.FormData.label: "Name*:"
             onAccepted: descriptionField.forceActiveFocus()
         }
 
         Controls.TextField {
             id: descriptionField
 
-            Kirigami.FormData.label: i18nc("@label:textbox", "Description:")
+            Kirigami.FormData.label: "Description:"
             onAccepted: dateField.forceActiveFocus()
         }
 
         Controls.TextField {
             id: dateField
 
-            Kirigami.FormData.label: i18nc("@label:textbox", "ISO Date*:")
+            Kirigami.FormData.label: "ISO Date*:"
             inputMask: "D999-99-99"
             onAccepted: addDialog.accepted()
         }

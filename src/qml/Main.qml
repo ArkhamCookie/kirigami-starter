@@ -9,7 +9,7 @@ Kirigami.ApplicationWindow {
 
     width: 600
     height: 400
-    title: i18nc("@title:window", "Day Kountdown")
+    title: "Day Kountdown"
 
     ListModel {
         id: kountdownModel
@@ -23,7 +23,7 @@ Kirigami.ApplicationWindow {
         isMenu: true
         actions: [
             Kirigami.Action {
-                text: i18n("Quit")
+                text: "Quit"
                 icon.name: "application-exit-symbolic"
                 shortcut: StandardKey.Quit
                 onTriggered: Qt.quit()
@@ -32,13 +32,13 @@ Kirigami.ApplicationWindow {
     }
 
     pageStack.initialPage: Kirigami.ScrollablePage {
-        title: i18nc("@title", "Kountdown")
+        title: "Kountdown"
         actions: [
             Kirigami.Action {
                 id: addAction
 
                 icon.name: "list-add-symbolic"
-                text: i18nc("@action:button", "Add kountdown")
+                text: "Add kountdown"
                 onTriggered: addDialog.open()
             }
         ]

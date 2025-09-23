@@ -24,7 +24,7 @@ Kirigami.AbstractCard {
 
             Kirigami.Heading {
                 level: 1
-                text: i18n("%1 days", Math.round((date - Date.now()) / 8.64e+07))
+                text: "%1 days", Math.round((date - Date.now()) / 8.64e+07)
             }
 
             ColumnLayout {
@@ -51,7 +51,7 @@ Kirigami.AbstractCard {
             Controls.Button {
                 Layout.alignment: Qt.AlignRight
                 Layout.columnSpan: 2
-                text: i18n("Edit")
+                text: "Edit"
             }
 
         }
