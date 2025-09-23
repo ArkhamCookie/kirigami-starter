@@ -315,7 +315,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "kirigami-starter"
+name = "kountdown"
 version = "0.1.0"
 dependencies = [
  "cxx",
