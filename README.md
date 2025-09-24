@@ -10,3 +10,4 @@ A starter app to learn [Kirigami](https://develop.kde.org/frameworks/kirigami/).
   - [Layouts, ListViews, and Cards](https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/)
   - [Adding actions](https://develop.kde.org/docs/getting-started/kirigami/introduction-actions/)
   - [Adding a dialog](https://develop.kde.org/docs/getting-started/kirigami/introduction-dialogs/)
+  - [A full Rust + Kirigami application](https://develop.kde.org/docs/getting-started/rust/rust-app/)
