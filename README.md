@@ -1,6 +1,11 @@
 # Kirigami Starter App
 
-A starter app to learn [Kirigami](https://develop.kde.org/frameworks/kirigami/).
+Some starter apps to learn [Kirigami](https://develop.kde.org/frameworks/kirigami/).
+
+## Apps
+
+- [kountdown](./kountdown/)
+- [simplemdviewer](./simplemdviewer/)
 
 ## References
 
